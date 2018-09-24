@@ -1,0 +1,37 @@
+page-booking-room {
+  .content {
+    background-color: #eee;
+  }
+  .md .card,
+  .ios .card,
+  .wp .card {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+
+  }
+  .card p {
+    padding-top: 15px;
+    font-size: 16px;
+  }
+  .hightlight {
+    background-color: map-get($colors, primary);
+    color: map-get($colors, light);
+    font-size: 18px;
+    border-radius: 10px;
+    &.datetime-md {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  .item .button {
+    padding: 10px;
+    font-size: 18px;
+    height: 40px;
+  }
+  .has-error.item {
+    .item-inner {
+      border-bottom: 1px solid red;
+    }
+  }
+}

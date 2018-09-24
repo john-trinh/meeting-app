@@ -1,0 +1,39 @@
+{
+  "result": [
+    {
+      "start": "9:00",
+      "end": "9:30",
+      "title": "Brie daily meeting",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam reiciendis accusantium incidunt saepe facilis illum adipisci.",
+      "author": "nguyen.tlc"
+    },
+    {
+      "start": "10:00",
+      "end": "10:30",
+      "title": "OC3 Leaders meeting",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam reiciendis accusantium incidunt saepe facilis illum adipisci.",
+      "author": "an.lam"
+    },
+    {
+      "start": "10:45",
+      "end": "11:45",
+      "title": "Brie FE team internal meeting",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam reiciendis accusantium incidunt saepe facilis illum adipisci.",
+      "author": "tan.vo"
+    },
+    {
+      "start": "13:30",
+      "end": "14:00",
+      "title": "SU1 meeting",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam reiciendis accusantium incidunt saepe facilis illum adipisci.",
+      "author": "someone.surname"
+    },
+    {
+      "start": "16:00",
+      "end": "17:30",
+      "title": "Meeting something for some other things",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam reiciendis accusantium incidunt saepe facilis illum adipisci.",
+      "author": "holy moly fucking asshole"
+    }
+  ]
+}

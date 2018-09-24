@@ -1,0 +1,15 @@
+{
+  "name": "Adolf Hilter",
+  "team": "Front-End",
+  "position": "developer",
+  "project": "Brie",
+  "serviceUnit": "Globe",
+  "avatar": "./../assets/imgs/default-avatar.png",
+  "phone": "0148932482",
+  "skype": "adolf.hilter",
+  "email": "adolf.hilter@nazism.com",
+  "coordinates": {
+  "x": 0,
+  "y": 2
+  }
+}

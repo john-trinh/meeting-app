@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button (click)="dismissModal()">
+          <ion-icon name="md-close" ></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>
+      Book your meeting
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form novalidate [formGroup]="bookingForm" (ngSubmit)="onSubmit()" style="background-color: #fff">
+    <ion-list>
+      <ion-item padding>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" name="date" formControlName="date" [min]="present"></ion-datetime>
+      </ion-item>
+      <ion-grid formGroupName="meetingtime" padding-top>
+        <ion-row>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" text-center type="datetime-local" class="hightlight" formControlName="meetingstart" minuteValues="0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55"></ion-datetime>
+          </ion-col>
+          <p padding-left padding-right>TO</p>
+          <ion-col>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" text-center class="hightlight" formControlName="meetingend" minuteValues="0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55"></ion-datetime>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <p *ngIf="isFieldValid('meetingtime') && !isFieldValid('meetingstart', 'meetingtime') && !isFieldValid('meetingend', 'meetingtime') && bookingForm.controls.meetingtime.errors.overlapped" padding-left style="color: red">
+        Choose other time! (overlapped with other meetings)
+      </p>
+
+      <p *ngIf="isFieldValid('meetingtime') && !isFieldValid('meetingstart', 'meetingtime') && !isFieldValid('meetingend', 'meetingtime') && bookingForm.controls.meetingtime.errors.startafterend" padding-left style="color: red">
+        Start time must be before end time
+      </p>
+
+      <p *ngIf="isFieldValid('meetingstart', 'meetingtime')" padding-left style="color: red">
+        Start time should not be in the past
+      </p>
+
+      <p *ngIf="isFieldValid('meetingend', 'meetingtime')" padding-left style="color: red">
+        End time should not be in the past
+      </p>
+      <ion-item padding-right [ngClass]="displayFieldCss('description')">
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" formControlName="title" [ngClass]="displayFieldCss('title')"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('title')" padding-left style="color: red">Required field!</p>
+      <ion-item padding-right [ngClass]="displayFieldCss('description')">
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text" formControlName="description" ></ion-input>
+      </ion-item>
+      <p  *ngIf="isFieldValid('description')" padding-left style="color: red">Required field!</p>
+      <ion-item>
+        <button ion-button margin-top type="submit" block>Book</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+

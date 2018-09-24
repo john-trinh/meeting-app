@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button (click)="dismissModal()">
+          <ion-icon name="md-close" ></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="editUser()">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-card>
+      <img src="{{info?.avatar}}"/>
+      <img [src]="base64Image" *ngIf="base64Image" />
+      <button ion-button (click)="changeAvatar()" class="camera-icon">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      <ion-card-content>
+        <ion-card-title>
+          {{info?.role}}
+        </ion-card-title>
+      </ion-card-content>
+      <ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="contact" ></ion-icon>
+        </ion-avatar>
+        <h2>{{info?.name}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="mail" ></ion-icon>
+        </ion-avatar>
+        <h2>{{info?.email}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="logo-skype" ></ion-icon>
+        </ion-avatar>
+        <h2>{{info?.skype}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="call" ></ion-icon>
+        </ion-avatar>
+        <h2>{{info?.phone}}</h2>
+      </ion-item>
+    </ion-card>
+    <ion-item>
+      <button ion-button (click)="getDataFromDb()"></button>
+    </ion-item>
+</ion-content>

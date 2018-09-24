@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button (click)="dismissModal()">
+        <ion-icon name="md-close" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form novalidate [formGroup]="staffForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item padding-top>
+        <ion-label>Avatar link</ion-label>
+        <ion-input type="text" formControlName="avatar"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('avatar')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('avatar')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>User</ion-label>
+        <ion-input type="text" formControlName="user"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('user')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('email')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Project</ion-label>
+        <ion-select formControlName="project">
+          <ion-option *ngFor="let project of listProject" [value]="project.text" >{{project.text}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <p *ngIf="isFieldValid('project')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Team</ion-label>
+        <ion-select formControlName="role">
+          <ion-option *ngFor="let role of listRole" [value]="role.text" >{{role.text}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <p *ngIf="isFieldValid('role')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Service Unit</ion-label>
+        <ion-input type="text" formControlName="serviceUnit"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('serviceUnit')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <ion-label>Phone</ion-label>
+        <ion-input type="text" formControlName="phone"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('phone')" padding-left style="color: red">Required field! (10-11) number</p>
+
+      <ion-item padding-top>
+        <ion-label>Skype</ion-label>
+        <ion-input type="text" formControlName="skype"></ion-input>
+      </ion-item>
+      <p *ngIf="isFieldValid('skype')" padding-left style="color: red">Required field!</p>
+
+      <ion-item padding-top>
+        <button ion-button margin-top type="button" block (click)="changeOccupation()">Change Occupation</button>
+      </ion-item>
+
+      <button ion-button margin-top padding-top type="submit" block>Add</button>
+
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <p>Door
+    <ion-icon name="arrow-round-forward"></ion-icon>
+  </p>
+  <ion-list *ngFor="let row of listSeat; let i = index">
+    <button [color]="getSeatColor(seat)" ion-button style="height: 50px" *ngFor="let seat of row; let j = index" (click)="getSeat(seat)"></button>
+  </ion-list>
+  <div class="explain">
+    <div>
+      <button ion-button color="danger" style="height: 50px"></button>
+      <span>Reccent occupation</span>
+    </div>
+    <div>
+      <button ion-button color="newred" style="height: 50px"></button>
+      <span>Occupied</span>
+    </div>
+    <div>
+      <button ion-button color="newgray" style="height: 50px"></button>
+      <span>Available</span>
+    </div>
+  </div>
+</ion-content>

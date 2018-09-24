@@ -1,0 +1,52 @@
+page-room-detail {
+  background-color: rgba(0, 0, 0, 0.05);
+  ion-slide {
+    p {
+      font-size: 14px;
+      &:first-child {
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      &:last-child {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  ion-slides {
+    background-color: color($colors, primary);
+    color: map-get($colors, light);
+  }
+  .active {
+    background-color: map-get($colors, light);
+    color: map-get($colors, dark);
+  }
+  ion-card {
+    .badge {
+      font-size: 14px;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, light);
+      padding: 2px 5px;
+    }
+  }
+  .card {
+    border: 1px solid map-get($colors, disabled);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .03);
+  }
+  ion-card-content {
+    .title {
+      padding-top: 5px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .author {
+      padding-top: 10px;
+      text-align: right;
+      p {
+        color: #888;
+      }
+    }
+  }
+}

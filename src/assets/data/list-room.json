@@ -1,0 +1,16 @@
+{
+  "result": [
+    {
+      "id": "sapa",
+      "name": "Sapa",
+      "img": "../../assets/imgs/sapa.jpg",
+      "status": 1
+    },
+    {
+      "id": "cantho",
+      "name": " Can Tho",
+      "img": "../../assets/imgs/cantho.jpg",
+      "status": 0
+    }
+  ]
+}

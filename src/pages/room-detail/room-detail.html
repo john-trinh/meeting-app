@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{title}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="bookingRoom()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-slides slidesPerView=7 pager="false" >
+    <ion-slide *ngFor="let date of dateList" [ngClass]="{'active': selectedDate == date}" (click)="selectDate(date)">
+      <p>{{date | date: 'EE' | uppercase }}</p>
+      <p>{{date | date: 'dd'}}</p>
+    </ion-slide>
+  </ion-slides>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor=" let meeting of meetingList">
+    <ion-card-header>
+      <span>From</span>
+      <span class="badge">{{meeting.start | date: 'h:mm a'}}</span>
+      <span>To</span>
+      <span class="badge">{{meeting.end | date: 'h:mm a'}}</span>
+    </ion-card-header>
+    <ion-card-content>
+      <h3 class="title">{{meeting.title}}</h3>
+      <p class="desc">{{meeting.description}}</p>
+      <div class="author" item-end>
+        <p>{{meeting.author}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <p *ngIf="isEmptyList()" text-center>No meeting has booked!</p>
+</ion-content>

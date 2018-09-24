@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meeting Rooms</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card (click)="showRoom(room)" *ngFor="let room of listRoom">
+    <img src="{{room.img}}"/>
+    <ion-card-content>
+      <ion-row class="row" no-padding>
+        <ion-col class="col">
+          <ion-card-title>{{room.name}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
